@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import './App.css'
-import MiAPI from './Components/MiAPI'
+import MiApi2 from './Components/MiApi2'
 import Buscador from './Components/Buscador'
 
 function App() {
@@ -9,8 +9,8 @@ function App() {
 
   return (
     <>
-      <h1>Hola q tal esto es un Landing Page</h1>
-      <MiAPI />
+      <h1>Hola q tal, esto es un Landing Page</h1>
+      <MiApi2 />
       <Buscador />
     </>
   )
