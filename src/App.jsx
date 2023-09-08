@@ -9,9 +9,8 @@ function App() {
 
   return (
     <>
-      <h1>Hola q tal, esto es un Landing Page</h1>
       <MiApi2 />
-      <Buscador />
+      {/*<Buscador />*/}
     </>
   )
 }
