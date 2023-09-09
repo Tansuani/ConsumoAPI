@@ -33,24 +33,12 @@ const MiApi2 = () => {
     searchPersonaje();
   }, []);
 
-  {/*const handleSubmit = (e) => {
-    e.preventDefault();
-  setNombre(e.target[0].value);*/}
-  
 
   return (
     <>
       
         <h1>Super Hero API</h1>
-        {/*<Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="formBasicEmail">
-            <Form.Label>Personaje</Form.Label>
-            <Form.Control type="text" placeholder="Los Simpson" />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Buscar
-          </Button>
-  </Form>*/}
+        
         <div className="mt-5 d-flex justify-content-center gap-3">
           {nombre.map((personaje, e) => (
             <Card key={e} style={{ width: "18rem" }}>
