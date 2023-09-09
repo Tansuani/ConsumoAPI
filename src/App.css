@@ -5,3 +5,18 @@
   text-align: center;
 }
 
+.mt-5{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tarjeta{
+  width: 20vw;
+  
+}
+
+.card-img-top{
+  height: 45vh;
+}

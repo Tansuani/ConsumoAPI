@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import Buscador from "./Buscador";
+
 
 const MiApi2 = () => {
   const [nombre, setNombre] = useState([]);
 
     const searchPersonaje = async () => {
-      const Url="https://apisimpsons.fly.dev/api/personajes";
+      const Url="https://apisimpsons.fly.dev/api/personajes/";
       
       const respuesta =await fetch (Url);
     
       const data = await respuesta.json();
       const documento = data.docs
-      
-    
+          
         .map((solicitud) => {
       
           return {
@@ -27,23 +27,30 @@ const MiApi2 = () => {
       })
     .sort((a, b) => a.id.localeCompare(b.id));
     setNombre(documento);
+
   };
 
   useEffect(() => {
     searchPersonaje();
   }, []);
 
+  const busqueda = (e) => {
+    e.preventDefault(searchPersonaje)
+    setNombre(searchPersonaje)
+  }
 
   return (
-    <>
-      
-        <h1>Super Hero API</h1>
-        
-        <div className="mt-5 d-flex justify-content-center gap-3">
-          {nombre.map((personaje, e) => (
+    <>      
+        <h1>Personajes de Los Simpson</h1>
+        <div>
+          <Buscador onSubmit={busqueda} />
+        </div>
+        <div className="mt-5">
+          {nombre.length > 0 ? (
+            nombre.map((personaje, e) => (
             <Card key={e} style={{ width: "18rem" }}>
               <Card.Img variant="top" src={personaje.image} />
-              <Card.Body>
+              <Card.Body className="tarjeta">
                 <Card.Title>{personaje.name}</Card.Title>
                 <Card.Text>
                   <span className="skills">Nombre: </span>
@@ -57,7 +64,9 @@ const MiApi2 = () => {
                 </Card.Text>
               </Card.Body>
             </Card>
-          ))}
+          ))
+        ) : <h1>No Existe</h1>
+        }
         </div>
     </>
   );
