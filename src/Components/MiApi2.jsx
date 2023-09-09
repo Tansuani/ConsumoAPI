@@ -25,7 +25,7 @@ const MiApi2 = () => {
             ocupacion:solicitud.Ocupacion,
           };
       })
-    .sort((a, b) => a.id.localeCompare(b.id));
+    .sort((a, b) => b.id.localeCompare(a.id));
     setNombre(documento);
 
   };
@@ -35,8 +35,8 @@ const MiApi2 = () => {
   }, []);
 
   const busqueda = (e) => {
-    e.preventDefault(searchPersonaje)
-    setNombre(searchPersonaje)
+    e.preventDefault(name)
+    setNombre(name)
   }
 
   return (
